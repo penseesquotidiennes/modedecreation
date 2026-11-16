@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Référentiel 1.3 — ModeDeCreation.org</title>
+<meta name="description" content="Le référentiel complet de déclaration du mode de création : production humaine, assistée par IA ou générée par IA. Version 1.3, 16 novembre 2026.">
+<link rel="icon" href="../assets/logo/favicon-64.png">
+<link rel="apple-touch-icon" href="../assets/logo/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+.nav{background:rgba(11,27,63,.92);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px)}
+.doc-hero{background:var(--navy);color:#fff;padding:150px 0 70px;position:relative;overflow:hidden}
+.doc-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 300px at 85% 30%,rgba(31,111,235,.30),transparent 70%),radial-gradient(400px 260px at 100% 90%,rgba(139,47,201,.28),transparent 70%),radial-gradient(400px 260px at 70% 100%,rgba(30,158,74,.22),transparent 70%)}
+.doc-hero .wrap{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.doc-hero h1{font-size:clamp(36px,5vw,62px);font-weight:800;margin:18px 0 16px;max-width:780px}
+.doc-hero p{color:rgba(255,255,255,.75);font-size:18px;max-width:620px}
+.doc-hero .eyebrow{color:var(--gold)}
+.doc-hero .acts{display:flex;gap:12px;flex-wrap:wrap}
+.doc-hero .badges{display:flex;gap:10px;margin-top:26px}
+.doc-hero .badges img{width:74px;filter:drop-shadow(0 8px 16px rgba(0,0,0,.35))}
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:64px;padding-top:72px;padding-bottom:110px}
+.toc{position:sticky;top:100px;align-self:start;max-height:calc(100vh - 120px);overflow:auto}
+.toc h5{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:14px}
+.toc ol{list-style:none;display:grid;gap:2px;border-left:1px solid var(--line)}
+.toc a{display:block;padding:6px 0 6px 16px;margin-left:-1px;border-left:2px solid transparent;font-size:14.5px;color:var(--ink-3);text-decoration:none;line-height:1.35}
+.toc a:hover{color:var(--ink)}
+.toc a.on{color:var(--ink);border-color:var(--navy);font-weight:600}
+.doc{max-width:740px}
+.doc section{scroll-margin-top:96px;padding-bottom:28px;margin-bottom:36px;border-bottom:1px solid var(--line)}
+.doc section:last-child{border-bottom:0}
+.doc h2{font-size:clamp(28px,3.2vw,38px);font-weight:700;margin-bottom:18px}
+.doc h3{font-size:21px;margin:30px 0 10px}
+.doc p{color:var(--ink-2);margin-bottom:14px}
+.doc ul{margin:0 0 16px;padding-left:22px;color:var(--ink-2)}
+.doc li{margin-bottom:7px}
+.doc strong{color:var(--ink)}
+.callout{background:var(--cream);border:1px solid #EFE5CC;border-left:4px solid var(--gold);border-radius:14px;padding:20px 24px;margin:20px 0;font-size:17.5px;color:var(--ink);font-weight:500}
+.callout.dark{background:var(--navy);color:#fff;border:0;border-left:4px solid var(--gold)}
+.simple{display:inline-block;font-family:"Inter Tight";font-weight:700;font-size:20px;padding:8px 16px;border-radius:12px;background:var(--soft);color:var(--acc);margin:4px 0 10px}
+.mode-head{display:flex;align-items:center;gap:22px;margin-bottom:18px}
+.mode-head img{width:120px;flex:none}
+.mode-head h2{margin:0}
+.mode-head .num{font-family:"JetBrains Mono";font-size:12.5px;letter-spacing:.12em;color:var(--acc);text-transform:uppercase}
+.table{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:18px 0 22px;background:#fff}
+.table .row{display:grid;grid-template-columns:1fr 230px;gap:20px;padding:14px 20px;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink-2);align-items:center}
+.table .row:first-child{border-top:0}
+.table .row.th{background:#F6F5F0;font-family:"JetBrains Mono";font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.table.cols3 .row{grid-template-columns:1fr 1fr 1.4fr}
+.table.cols2b .row{grid-template-columns:200px 1fr}
+.v{font-weight:600;font-size:14.5px}
+.v.h{color:var(--green)}.v.a{color:var(--blue)}.v.g{color:var(--purple)}
+.qbox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:16px 0;box-shadow:var(--shadow)}
+.qbox .qn{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.qbox p.q{font-family:"Inter Tight";font-weight:600;font-size:19px;color:var(--ink);margin:6px 0 12px;line-height:1.35}
+.qbox ul{list-style:none;padding:0;margin:0}
+.qbox li{display:flex;gap:10px;align-items:center}
+.arrow{color:var(--ink-3)}
+.fig{display:flex;justify-content:center;gap:4%;background:linear-gradient(135deg,var(--navy),#20306A);border-radius:18px;padding:28px;margin:18px 0 8px}
+.fig img{width:28%}
+.figcap{font-size:13.5px;color:var(--ink-3);margin-bottom:18px}
+.minis{display:flex;gap:28px;justify-content:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin:18px 0 8px}
+.minis div{text-align:center;font-family:"JetBrains Mono";font-size:11.5px;letter-spacing:.08em;color:var(--ink-3)}
+.minis img{width:72px;margin:0 auto 8px}
+.endnote{font-family:"Inter Tight";font-size:22px;font-weight:600;color:var(--ink);text-align:center;padding:30px 10px 0;line-height:1.4}
+.doc-dl{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--navy);color:#fff;border-radius:20px;padding:26px 30px;margin-top:20px}
+.doc-dl p{color:rgba(255,255,255,.75);margin:0}
+.doc-dl strong{color:#fff;display:block;font-family:"Inter Tight";font-size:20px}
+@media (max-width:1000px){.layout{grid-template-columns:1fr;gap:0}.toc{display:none}}
+@media (max-width:700px){
+ .doc-hero{padding:118px 0 52px}
+ .layout{padding-top:48px;padding-bottom:80px}
+ .table .row,.table.cols3 .row,.table.cols2b .row{grid-template-columns:1fr;gap:6px}
+ .table .row.th{display:none}
+ .mode-head{gap:16px}.mode-head img{width:84px}
+ .minis{gap:14px}.minis img{width:56px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav scrolled" id="nav">
+  <div class="wrap">
+    <a href="../" class="brand" aria-label="ModeDeCreation.org, accueil"><img src="../assets/logo/marque-160.png" alt="" class="brand-mark"><span class="brand-txt">ModeDeCreation<span class="tld">.org</span></span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="../#pastilles">Les pastilles</a>
+      <a href="../#test">Trouver ma pastille</a>
+      <a href="../#charte">Charte</a>
+      <a href="./" style="color:#fff">Référentiel</a>
+      <a href="../#telechargements" class="btn btn-gold">Télécharger</a>
+    </nav>
+  </div>
+</header>
+
+<section class="doc-hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Version 1.3 · 16 novembre 2026</span>
+      <h1>Référentiel de déclaration du mode de création</h1>
+      <p>Cadre volontaire de transparence. Aucune certification externe.</p>
+      <div class="badges">
+        <img src="../assets/pastilles/production-humaine.png" alt="Production humaine">
+        <img src="../assets/pastilles/production-assistee-par-ia.png" alt="Production assistée par IA">
+        <img src="../assets/pastilles/production-generee-par-ia.png" alt="Production générée par IA">
+      </div>
+    </div>
+    <div class="acts">
+      <a class="btn btn-gold" href="../assets/docs/referentiel-mode-de-creation-v1-3.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Télécharger le PDF</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+  <aside class="toc">
+    <h5>Sommaire</h5>
+    <ol id="toc">
+      <li><a href="#pourquoi">Pourquoi ce référentiel?</a></li>
+      <li><a href="#application">À quoi s’applique une pastille?</a></li>
+      <li><a href="#qui">Qui choisit la pastille?</a></li>
+      <li><a href="#principe">Un principe fondamental</a></li>
+      <li><a href="#humaine">1. Production humaine</a></li>
+      <li><a href="#assistee">2. Production assistée par IA</a></li>
+      <li><a href="#generee">3. Production générée par IA</a></li>
+      <li><a href="#commandes">Le nombre de commandes</a></li>
+      <li><a href="#pourcentage">Pas de pourcentage arbitraire</a></li>
+      <li><a href="#technique">L’IA technique</a></li>
+      <li><a href="#cas">Cas courants</a></li>
+      <li><a href="#mixtes">Les créations mixtes</a></li>
+      <li><a href="#test">Le test des deux questions</a></li>
+      <li><a href="#doute">La règle du doute</a></li>
+      <li><a href="#signification">Ce que les pastilles ne signifient pas</a></li>
+      <li><a href="#loi">Les pastilles et la loi</a></li>
+      <li><a href="#retenir">La règle à retenir</a></li>
+      <li><a href="#charte">Charte d’utilisation</a></li>
+      <li><a href="#versions">Versions du référentiel</a></li>
+    </ol>
+  </aside>
+
+  <article class="doc">
+
+    <section id="pourquoi">
+      <h2>Pourquoi ce référentiel?</h2>
+      <p>Les outils d’intelligence artificielle font désormais partie de nombreux processus de création. Leur présence ne signifie toutefois pas que toutes les créations ont été produites de la même manière.</p>
+      <p>Ce référentiel propose trois modes de création, chacun représenté par une pastille :</p>
+      <ul><li><strong>PRODUCTION HUMAINE</strong></li><li><strong>PRODUCTION ASSISTÉE PAR IA</strong></li><li><strong>PRODUCTION GÉNÉRÉE PAR IA</strong></li></ul>
+      <p>Son objectif n’est pas de mesurer la valeur, la qualité ou le mérite d’une création. Il vise simplement à répondre, de la façon la plus claire possible, à cette question :</p>
+      <div class="callout dark">Quel rôle l’humain et l’intelligence artificielle ont-ils réellement joué dans la création du résultat final?</div>
+      <h3>Les mots employés</h3>
+      <p>Dans ce texte, le mot <strong>création</strong> désigne l’œuvre ou le contenu présenté au public : un texte, une image, une vidéo, une musique, une publication.</p>
+      <p>Le mot <strong>production</strong>, inscrit sur les pastilles, désigne la façon dont cette création a été produite. Ainsi, une création humaine porte la pastille PRODUCTION HUMAINE, et ainsi de suite.</p>
+    </section>
+
+    <section id="application">
+      <h2>À quoi s’applique une pastille?</h2>
+      <p>Une pastille décrit <strong>une création précise</strong>, telle que le public la voit, la lit ou l’entend : un article, une image, une vidéo, une publication, un épisode.</p>
+      <ul>
+        <li>Lorsqu’un site, un livre ou une chaîne réunit des créations faites de manières différentes, chaque création porte sa propre pastille.</li>
+        <li>Une pastille générale placée sur tout un site ne remplace pas la pastille de chaque création.</li>
+        <li>Lorsqu’une création est modifiée de façon importante après sa publication, sa pastille doit être revue.</li>
+      </ul>
+    </section>
+
+    <section id="qui">
+      <h2>Qui choisit la pastille?</h2>
+      <p>La pastille est une <strong>auto-déclaration</strong>. Elle est choisie par la personne ou l’organisation qui publie la création, parce que c’est elle qui sait comment la création a été produite.</p>
+      <p>La pastille n’est pas une certification accordée par un organisme extérieur. Elle est un engagement de bonne foi envers le public.</p>
+      <p>Si une pastille se révèle inexacte, la personne qui l’a choisie s’engage à la corriger rapidement, et de façon visible lorsque l’erreur était importante.</p>
+    </section>
+
+    <section id="principe">
+      <h2>Un principe fondamental</h2>
+      <p>La bonne pastille ne dépend pas simplement de la présence ou de l’absence d’intelligence artificielle.</p>
+      <div class="callout">Elle dépend surtout de qui a façonné le contenu final.</div>
+      <p>Ainsi, utiliser un outil comportant certaines fonctions d’IA ne transforme pas automatiquement une création humaine en création assistée par IA.</p>
+      <p>Inversement, consacrer beaucoup de temps à rédiger des commandes pour une IA ne signifie pas nécessairement que l’œuvre est devenue une création humaine.</p>
+      <p>Ce qui compte est la nature réelle de la contribution de chacun.</p>
+      <h3>Diriger n’est pas toujours façonner</h3>
+      <p>Cette distinction permet de trancher de nombreux cas, mais elle doit être appliquée avec nuance.</p>
+      <p>Donner à l’IA un sujet, formuler des consignes générales, demander plusieurs versions, en rejeter et en sélectionner une constitue une forme de direction. Ces gestes peuvent être importants, mais ils ne suffisent pas, à eux seuls, à démontrer une contribution créative substantielle.</p>
+      <p>La direction devient elle-même créativement substantielle lorsqu’elle détermine de manière précise et continue le sens, la structure, l’agencement, la narration ou la forme définitive de la création. À l’inverse, multiplier les commandes ou choisir parmi des résultats sans exercer cette influence structurante demeure principalement une activité de demande et de sélection.</p>
+      <div class="callout">Pour distinguer une production assistée par IA d’une production générée par IA, on évalue donc l’ensemble de la contribution humaine : ce que la personne crée ou modifie elle-même, mais aussi, lorsque c’est déterminant, la direction structurante qu’elle exerce sur le résultat final.</div>
+    </section>
+
+    <section id="humaine" class="h">
+      <div class="mode-head"><img src="../assets/pastilles/production-humaine.png" alt="Pastille Production humaine"><div><span class="num">Mode 1</span><h2>Production humaine</h2></div></div>
+      <h3>Définition</h3>
+      <p>Une création est humaine lorsque son contenu créatif ou intellectuel est conçu et réalisé par une ou plusieurs personnes.</p>
+      <p>Des outils numériques ou automatisés peuvent être utilisés, pourvu qu’ils ne génèrent pas eux-mêmes une partie du contenu créatif final.</p>
+      <h3>En termes simples</h3>
+      <span class="simple">L’humain crée.</span>
+      <h3>Exemples</h3>
+      <p>Une personne :</p>
+      <ul><li>écrit elle-même un article;</li><li>dessine une illustration sur une tablette graphique;</li><li>réalise un montage vidéo à partir d’images qu’elle a créées ou filmées;</li><li>retouche la luminosité ou les couleurs d’une photographie;</li><li>utilise un correcteur d’orthographe et de grammaire;</li><li>stabilise automatiquement une vidéo;</li><li>supprime un bruit de fond;</li><li>recadre ou redimensionne une image.</li></ul>
+      <p>Ces opérations peuvent faire appel à des technologies très avancées, parfois même à de l’intelligence artificielle, sans que l’outil devienne pour autant le créateur du contenu.</p>
+    </section>
+
+    <section id="assistee" class="a">
+      <div class="mode-head"><img src="../assets/pastilles/production-assistee-par-ia.png" alt="Pastille Production assistée par IA"><div><span class="num">Mode 2</span><h2>Production assistée par IA</h2></div></div>
+      <h3>Définition</h3>
+      <p>Une création est assistée par IA lorsque l’humain et l’intelligence artificielle contribuent tous les deux de façon réelle au contenu final, et que l’humain y apporte une contribution créative substantielle.</p>
+      <p>Cette contribution peut prendre la forme d’une création ou d’une modification directe du contenu, d’une réécriture, d’un assemblage, d’un montage créatif ou d’une direction structurante qui détermine réellement le sens, la structure, l’agencement, la narration ou la forme finale.</p>
+      <h3>En termes simples</h3>
+      <span class="simple">L’humain crée avec l’IA.</span>
+      <h3>Ce que veut dire « contribution créative substantielle »</h3>
+      <p>Une contribution créative est substantielle lorsqu’elle influence de manière déterminante le sens, la structure, l’agencement, l’expression ou la forme du résultat final. Elle doit être perceptible dans la création finale, même si elle n’est pas mesurable en nombre de mots, de pixels ou de minutes. Le fait que le résultat final diffère fortement de la sortie brute de l’IA peut constituer un indice, mais ce n’est pas, à lui seul, un critère suffisant.</p>
+      <p>Quelques repères à la frontière :</p>
+      <div class="table">
+        <div class="row th"><span>Situation</span><span>Contribution substantielle?</span></div>
+        <div class="row"><span>L’IA rédige un texte de 20 phrases; la personne corrige deux mots et change le titre.</span><span class="v g">Non : générée par IA</span></div>
+        <div class="row"><span>L’IA rédige un premier jet; la personne réécrit la moitié des phrases, réorganise le texte et ajoute ses propres idées.</span><span class="v a">Oui : assistée par IA</span></div>
+        <div class="row"><span>L’IA produit une image; la personne ajuste seulement la luminosité et la recadre.</span><span class="v g">Non : générée par IA</span></div>
+        <div class="row"><span>La personne combine plusieurs images générées, dessine elle-même certains éléments et compose l’ensemble.</span><span class="v a">Oui : assistée par IA</span></div>
+        <div class="row"><span>La personne écrit son texte; l’IA en propose une version plus fluide que la personne accepte presque entièrement.</span><span class="v a">Oui : assistée par IA (l’IA a réécrit)</span></div>
+        <div class="row"><span>L’IA génère les plans d’une vidéo; la personne impose le scénario, l’ordre des scènes, le rythme, la narration et le montage final par une direction précise et continue.</span><span class="v a">Oui : assistée par IA (direction structurante)</span></div>
+      </div>
+      <h3>Ce que fait l’humain</h3>
+      <p>Les gestes qui comptent sont ceux par lesquels l’humain intervient lui-même sur le contenu final. Il peut notamment :</p>
+      <ul><li>écrire une partie du contenu;</li><li>réécrire des passages;</li><li>corriger et retravailler le contenu en profondeur;</li><li>modifier lui-même la composition;</li><li>réunir et assembler plusieurs éléments;</li><li>ajouter des éléments qu’il a lui-même créés (texte, dessin, photo, musique, voix);</li><li>transformer le résultat au fil de nombreuses étapes;</li><li>exercer une direction structurante qui détermine la narration, l’agencement ou la forme définitive.</li></ul>
+      <h3>Ce qui ne suffit généralement pas à lui seul</h3>
+      <p>Pris isolément, les gestes suivants ne suffisent généralement pas à faire passer une création de « générée » à « assistée » :</p>
+      <ul><li>concevoir une idée générale sans intervenir davantage sur le résultat;</li><li>définir un objectif ou des contraintes générales;</li><li>donner des consignes générales ou une direction non structurante;</li><li>demander plusieurs propositions ou variantes;</li><li>rejeter ou sélectionner des propositions sans autre contribution substantielle.</li></ul>
+      <p>La vérification des faits est un travail éditorial précieux et fortement recommandé, mais elle ne change pas, à elle seule, qui a créé le contenu. En revanche, lorsqu’une direction artistique ou éditoriale est précise, continue et déterminante au point de façonner la structure, la narration, l’agencement ou la forme finale, elle peut constituer une contribution créative substantielle.</p>
+      <h3>Exemple</h3>
+      <p>Une personne conçoit une identité visuelle. Elle détermine le concept, le message, les catégories à représenter, la hiérarchie, les couleurs et les contraintes de mise en page. Une IA produit différentes propositions. La personne les compare, rejette certaines versions et dirige ensuite, de façon précise et continue, les modifications de composition, de typographie, de proportions et d’éléments graphiques jusqu’au résultat définitif. Elle peut aussi terminer certains ajustements dans un logiciel de graphisme.</p>
+      <p>Le produit final ne correspond plus simplement à une génération de l’IA : sa structure et sa forme ont été déterminées par un processus de création conjoint, sous une direction humaine substantielle.</p>
+      <div class="callout">À noter : si la personne s’était limitée à des demandes générales, à la multiplication des commandes et au choix d’un résultat sans exercer une influence structurante sur la forme finale, la création serait plutôt générée par IA.</div>
+    </section>
+
+    <section id="generee" class="g">
+      <div class="mode-head"><img src="../assets/pastilles/production-generee-par-ia.png" alt="Pastille Production générée par IA"><div><span class="num">Mode 3</span><h2>Production générée par IA</h2></div></div>
+      <h3>Définition</h3>
+      <p>Une création est générée par IA lorsque l’intelligence artificielle produit l’essentiel du contenu créatif final à partir d’une demande humaine.</p>
+      <p>L’humain peut avoir choisi le sujet, formulé des consignes, demandé plusieurs versions ou sélectionné le résultat qu’il préfère. Il peut aussi avoir fait de petites retouches.</p>
+      <p>Cependant, la matière créative du produit final provient principalement de la génération de l’IA.</p>
+      <h3>En termes simples</h3>
+      <span class="simple">L’humain demande, l’IA crée.</span>
+      <h3>Exemple</h3>
+      <p>Une personne écrit :</p>
+      <div class="callout">« Crée une image réaliste d’un chalet au bord d’un lac au lever du soleil. »</div>
+      <p>L’intelligence artificielle produit l’image. La personne choisit celle qu’elle préfère et l’utilise pratiquement telle quelle.</p>
+      <p>Même si la commande humaine peut être détaillée et réfléchie, l’image elle-même a été produite principalement par l’intelligence artificielle.</p>
+    </section>
+
+    <section id="commandes">
+      <h2>Le nombre de commandes ne détermine pas la catégorie</h2>
+      <p>Il serait fragile de classer une création selon le nombre de commandes adressées à l’intelligence artificielle.</p>
+      <p>Une personne peut rédiger une seule commande et ensuite transformer profondément elle-même le résultat obtenu. Une autre peut rédiger cent commandes extrêmement précises sans jamais modifier elle-même le contenu généré.</p>
+      <p>Dans le premier cas, la création est assistée par IA. Dans le second, elle demeure générée par IA.</p>
+      <p>La question n’est donc pas : « Combien de travail l’humain a-t-il consacré à ses commandes? »</p>
+      <div class="callout dark">La question est : « Qui a façonné le contenu que le public voit, lit ou entend finalement? »</div>
+    </section>
+
+    <section id="pourcentage">
+      <h2>Pas de pourcentage arbitraire</h2>
+      <p>Ce référentiel évite volontairement les règles comme « 30 % humain », « 50 % IA » ou « 70 % humain ».</p>
+      <p>De tels pourcentages seraient difficiles à mesurer objectivement et donneraient une fausse impression de précision.</p>
+      <p>Une création se classe plutôt selon la nature de la contribution de l’humain et de l’intelligence artificielle.</p>
+    </section>
+
+    <section id="technique">
+      <h2>L’IA technique n’est pas de l’IA créative</h2>
+      <p>Cette distinction est essentielle.</p>
+      <p>Une technologie peut utiliser l’intelligence artificielle pour accomplir une tâche technique sans participer réellement à la création du contenu. Par exemple :</p>
+      <ul><li>enlever un bruit parasite;</li><li>corriger une exposition;</li><li>stabiliser une image;</li><li>détourer automatiquement un sujet;</li><li>corriger l’orthographe, la grammaire ou la ponctuation;</li><li>convertir un format de fichier;</li><li>améliorer légèrement la netteté.</li></ul>
+      <p>Ces fonctions ne demandent pas, à elles seules, de déclarer une création comme assistée par IA.</p>
+      <p>En revanche, lorsqu’une IA invente, rédige, reformule, dessine, compose, interprète, transforme substantiellement ou génère du contenu qui se retrouve dans le produit final, sa contribution devient créative.</p>
+    </section>
+
+    <section id="cas">
+      <h2>Cas courants</h2>
+      <p><strong>Correcteurs qui reformulent.</strong> Corriger l’orthographe, la grammaire, la ponctuation ou proposer un mot à la fois reste technique : PRODUCTION HUMAINE. Dès que l’outil réécrit des phrases ou des paragraphes entiers et que ces réécritures sont conservées, sa contribution devient créative : PRODUCTION ASSISTÉE PAR IA.</p>
+      <p><strong>Traduction par IA d’un texte humain.</strong> Traduire, c’est choisir des mots, un ton, un rythme : c’est un travail d’interprétation. Un texte humain traduit par IA porte donc la pastille PRODUCTION ASSISTÉE PAR IA, avec la mention « Traduction par IA ». Si une personne révise ensuite la traduction en profondeur, la pastille reste la même, mais la mention peut devenir « Traduction par IA, révisée par un humain ».</p>
+      <p><strong>Voix synthétique qui lit un texte humain.</strong> La voix, l’intonation et le rythme sont une interprétation, et cette interprétation est faite par l’IA. La création porte la pastille PRODUCTION ASSISTÉE PAR IA, avec la mention « Voix générée par IA, texte humain ».</p>
+      <p><strong>Sous-titres et transcriptions automatiques.</strong> Lorsqu’ils reproduisent fidèlement des paroles humaines, ils restent techniques et ne changent pas la pastille.</p>
+    </section>
+
+    <section id="mixtes">
+      <h2>Les créations mixtes</h2>
+      <p>Certaines productions sont plus complexes. Une vidéo peut, par exemple, comporter :</p>
+      <ul><li>un scénario écrit par un humain;</li><li>des images générées par IA;</li><li>une voix synthétique;</li><li>un montage humain;</li><li>une musique composée par un humain.</li></ul>
+      <p>Dans ce cas, on choisit la pastille en considérant la création dans son ensemble :</p>
+      <ul><li>si aucune composante n’a été créée par IA : <strong>PRODUCTION HUMAINE</strong>;</li><li>si certaines composantes ont été créées par IA, mais que l’humain a lui-même apporté une contribution créative substantielle au produit final : <strong>PRODUCTION ASSISTÉE PAR IA</strong>;</li><li>si presque toutes les composantes ont été créées par IA et que l’humain s’est surtout limité à demander et assembler sommairement : <strong>PRODUCTION GÉNÉRÉE PAR IA</strong>.</li></ul>
+      <h3>Quand une mention complémentaire est requise</h3>
+      <p>Lorsqu’une création mixte contient une composante créée par IA qui joue un rôle créatif substantiel, ou dont la connaissance pourrait modifier la compréhension du public sur la façon dont l’œuvre a été produite, la pastille doit être accompagnée d’une courte mention qui précise qui a fait quoi. Par exemple :</p>
+      <ul><li>« Images générées par IA, scénario et montage humains. »</li><li>« Texte humain, voix générée par IA. »</li><li>« Illustration générée par IA, texte humain. »</li></ul>
+      <p>La pastille donne l’information générale. La mention complémentaire apporte la transparence nécessaire lorsque la participation de l’IA est créativement importante. Une composante mineure, purement technique ou sans incidence créative substantielle n’exige pas, à elle seule, une mention complémentaire.</p>
+    </section>
+
+    <section id="test">
+      <h2>Le test des deux questions</h2>
+      <p>Pour choisir une pastille, deux questions suffisent dans la grande majorité des situations.</p>
+      <div class="qbox"><span class="qn">Question 1</span><p class="q">L’intelligence artificielle a-t-elle généré, rédigé ou transformé de façon créative une partie du contenu final?</p>
+        <ul><li><span class="arrow">Non →</span><span class="v h">PRODUCTION HUMAINE</span></li><li><span class="arrow">Oui →</span><span>Passer à la question 2.</span></li></ul></div>
+      <div class="qbox"><span class="qn">Question 2</span><p class="q">L’humain a-t-il apporté une contribution créative substantielle au résultat final?</p>
+        <p style="font-size:15px">Par exemple : création, écriture, réécriture, transformation, assemblage, montage créatif ou direction structurante qui détermine réellement le sens, la structure, l’agencement, la narration ou la forme finale.</p>
+        <ul><li><span class="arrow">Oui →</span><span class="v a">PRODUCTION ASSISTÉE PAR IA</span></li><li><span class="arrow">Non ou très peu →</span><span class="v g">PRODUCTION GÉNÉRÉE PAR IA</span></li></ul></div>
+      <p>Rappel : le simple fait de choisir, rejeter ou multiplier les consignes ne suffit pas. En revanche, une direction précise, continue et déterminante peut constituer une contribution substantielle lorsqu’elle façonne réellement le résultat final.</p>
+      <h3>Le test de vérification</h3>
+      <p>Si la réponse à la question 2 semble incertaine, poser cette question :</p>
+      <div class="callout dark">Si l’on retirait du produit final tout ce que l’intelligence artificielle a réellement créé, resterait-il encore une création humaine substantielle?</div>
+      <ul><li>Si oui, la pastille PRODUCTION ASSISTÉE PAR IA est appropriée.</li><li>Si presque tout le contenu créatif disparaissait, la pastille PRODUCTION GÉNÉRÉE PAR IA est la bonne.</li></ul>
+      <p><a href="../#test" style="font-weight:600;color:var(--blue)">Faire le test interactif →</a></p>
+    </section>
+
+    <section id="doute">
+      <h2>La règle du doute</h2>
+      <div class="callout">En cas de doute raisonnable entre deux pastilles, on choisit celle qui informe le plus clairement le public sur la participation réelle de l’IA.</div>
+      <ul><li>Si le doute persiste entre HUMAINE et ASSISTÉE PAR IA → privilégier ASSISTÉE PAR IA.</li><li>Si le doute persiste entre ASSISTÉE PAR IA et GÉNÉRÉE PAR IA → privilégier GÉNÉRÉE PAR IA.</li></ul>
+      <p>Le but n’est pas de rechercher la catégorie la plus avantageuse. Le but est de pouvoir répondre simplement et sincèrement à cette question :</p>
+      <div class="callout dark">« Si la personne qui regarde cette création connaissait la façon dont elle a été produite, trouverait-elle la pastille choisie juste et fidèle à la réalité? »</div>
+      <p>C’est cette transparence qui donne sa valeur au système.</p>
+    </section>
+
+    <section id="signification">
+      <h2>Ce que les pastilles ne signifient pas</h2>
+      <ul><li>HUMAINE ne veut pas dire « meilleure ».</li><li>ASSISTÉE PAR IA ne veut pas dire « moins authentique ».</li><li>GÉNÉRÉE PAR IA ne veut pas dire « sans intervention humaine ».</li></ul>
+      <p>Les pastilles ne constituent ni un classement ni une récompense. Elles indiquent simplement le mode de création.</p>
+    </section>
+
+    <section id="loi">
+      <h2>Les pastilles et la loi</h2>
+      <p>Ce référentiel est une démarche volontaire de transparence. Il ne remplace pas les obligations légales.</p>
+      <p>Certaines législations peuvent imposer des obligations particulières de divulgation, d’étiquetage ou d’information pour certains contenus créés ou modifiés à l’aide de l’IA. Ces exigences varient selon la juridiction, le type de contenu et le contexte d’utilisation, et elles peuvent évoluer rapidement.</p>
+      <p>Les utilisateurs du référentiel demeurent responsables de vérifier les règles applicables dans leur juridiction. Lorsqu’une loi impose une mention particulière, cette mention s’ajoute à la pastille et doit être présentée dans la forme exigée par la loi.</p>
+    </section>
+
+    <section id="retenir">
+      <h2>La règle à retenir</h2>
+      <div class="table cols2b">
+        <div class="row th"><span>Pastille</span><span>En termes simples</span></div>
+        <div class="row"><span class="v h">PRODUCTION HUMAINE</span><span>L’humain crée.</span></div>
+        <div class="row"><span class="v a">PRODUCTION ASSISTÉE PAR IA</span><span>L’humain crée avec l’IA.</span></div>
+        <div class="row"><span class="v g">PRODUCTION GÉNÉRÉE PAR IA</span><span>L’humain demande, l’IA crée.</span></div>
+      </div>
+      <p>Et en cas de doute : la pastille qui informe le plus clairement le public sur la participation réelle de l’IA.</p>
+    </section>
+
+    <section id="charte">
+      <h2>Charte d’utilisation des pastilles</h2>
+      <p><em>Nouveauté de la version 1.3.</em> Cette charte complète le référentiel sans modifier la définition des trois modes de création, le test des deux questions ni la règle du doute. Elle encadre la présentation visuelle d’une déclaration volontaire; elle ne crée aucune certification ni aucun jugement de valeur.</p>
+
+      <h3>1. Les trois pastilles et leur code couleur</h3>
+      <p>Les trois modèles partagent une même structure : forme ronde, contour doré, bandeau supérieur bleu marine portant « MODE DE CRÉATION », fond crème, pictogramme central et intitulé lisible. Seule la couleur d’accent change selon la catégorie.</p>
+      <div class="fig"><img src="../assets/pastilles/production-humaine.png" alt="Production humaine"><img src="../assets/pastilles/production-assistee-par-ia.png" alt="Production assistée par IA"><img src="../assets/pastilles/production-generee-par-ia.png" alt="Production générée par IA"></div>
+      <p class="figcap">Figure 1 — Modèles visuels de référence : pastilles complètes, avec accents vert, bleu et mauve.</p>
+      <div class="table cols3">
+        <div class="row th"><span>Mode</span><span>Accent</span><span>Intitulé à utiliser</span></div>
+        <div class="row"><span>Humaine</span><span class="v h">VERT</span><span>Production humaine</span></div>
+        <div class="row"><span>Assistée par IA</span><span class="v a">BLEU</span><span>Production assistée par IA</span></div>
+        <div class="row"><span>Générée par IA</span><span class="v g">MAUVE</span><span>Production générée par IA</span></div>
+      </div>
+      <p>Les couleurs facilitent le repérage; elles ne hiérarchisent pas les modes de création. L’intitulé écrit reste indispensable : la couleur, à elle seule, ne constitue pas une déclaration.</p>
+
+      <h3>2. Règles d’intégrité graphique</h3>
+      <ul>
+        <li>Conserver la forme circulaire, le contour doré et le bleu marine commun aux trois pastilles.</li>
+        <li>Préserver le libellé et son accentuation : « Production humaine », « Production assistée par IA » et « Production générée par IA ». Ne jamais raccourcir « assistée » ou « générée » au point de créer une ambiguïté.</li>
+        <li>Ne pas intervertir les couleurs : vert = humaine; bleu = assistée par IA; mauve = générée par IA.</li>
+        <li>Ne pas ajouter de lauriers, de signature d’éditeur, de sourire courbe sous le texte, de médaille, de sceau de contrôle, ni de formulation laissant croire à une homologation officielle.</li>
+        <li>Éviter les distorsions, rotations, recadrages, opacités excessives, surimpressions et contrastes insuffisants.</li>
+        <li>Sur un fond complexe, ajouter un espace de protection ou un support clair neutre sans toucher à la forme ni au texte de la pastille.</li>
+      </ul>
+
+      <h3>3. Deux formats d’utilisation</h3>
+      <p><strong>Format complet.</strong> C’est le format de référence. Il comporte le nom du mode de création, son pictogramme et la couronne « MODE DE CRÉATION ». Il doit être préféré dès que le texte reste réellement lisible à la taille d’affichage.</p>
+      <p><strong>Format miniature.</strong> Il conserve la forme ronde, le pictogramme et la couleur d’accent, mais retire le texte devenu illisible. Il sert de repère visuel secondaire et ne doit pas se substituer à la déclaration écrite lorsqu’une information compréhensible est attendue.</p>
+
+      <h3>4. Test de taille et critères de lisibilité</h3>
+      <div class="table">
+        <div class="row th"><span>Taille affichée à l’écran</span><span>Recommandation</span></div>
+        <div class="row"><span><strong>≈ 280 px</strong> de diamètre</span><span>Version complète : excellente lisibilité dans les essais.</span></div>
+        <div class="row"><span><strong>≈ 160 px</strong></span><span>Version complète : lisible en général; contrôler sur téléphone.</span></div>
+        <div class="row"><span><strong>≈ 96 px</strong></span><span>Version miniature conseillée; accompagner d’un intitulé visible.</span></div>
+        <div class="row"><span><strong>≈ 64 px et moins</strong></span><span>Pictogramme seul : repère uniquement; déclaration écrite distincte obligatoire.</span></div>
+      </div>
+      <p>Ces seuils sont des repères de conception issus d’un essai visuel, et non des garanties universelles : la lisibilité dépend aussi de l’écran, du contraste, de la compression et du contexte. En impression, vérifier un exemplaire à taille réelle; ne pas transposer directement les pixels à une dimension en millimètres.</p>
+      <div class="minis"><div><img src="../assets/pastilles/miniature-humaine.png" alt="Miniature Production humaine">HUMAINE</div><div><img src="../assets/pastilles/miniature-assistee-par-ia.png" alt="Miniature Production assistée par IA">ASSISTÉE PAR IA</div><div><img src="../assets/pastilles/miniature-generee-par-ia.png" alt="Miniature Production générée par IA">GÉNÉRÉE PAR IA</div></div>
+      <p class="figcap">Figure 2 — Déclinaisons miniatures. Le pictogramme doit toujours être accompagné d’une identification textuelle ou d’une légende accessible.</p>
+
+      <h3>5. Placement selon le support</h3>
+      <div class="table cols2b">
+        <div class="row th"><span>Support</span><span>Bonne pratique</span></div>
+        <div class="row"><span><strong>Vidéo et Reel</strong></span><span>Afficher la pastille complète à une taille lisible dans une carte de fin ou à un endroit stable; la légende ou la description peut préciser les contributions. Une miniature en coin ne remplace pas à elle seule cette information.</span></div>
+        <div class="row"><span><strong>Article, photo, page Web</strong></span><span>Placer la pastille complète près du titre, de la légende ou des crédits de la création, et prévoir un texte alternatif compréhensible.</span></div>
+        <div class="row"><span><strong>Livre, couverture, œuvre imprimée</strong></span><span>Positionner la pastille sans gêner le titre ni le contenu. Lorsque les chapitres ou illustrations ont des modes distincts, les identifier séparément.</span></div>
+        <div class="row"><span><strong>Collection, site, chaîne</strong></span><span>Une pastille générale ne suffit pas si les créations sont de modes différents : choisir une pastille pour chaque unité pertinente.</span></div>
+        <div class="row"><span><strong>Icône miniature</strong></span><span>Prévoir une légende textuelle immédiatement proche, un libellé visible lors de l’ouverture ou un complément équivalent et accessible.</span></div>
+      </div>
+
+      <h3>6. Mention complémentaire et transparence</h3>
+      <p>La pastille résume le mode général. Une mention complémentaire précise les rôles lorsque la participation de l’IA est créativement importante ou susceptible de modifier la compréhension du public. Elle ne sert pas à contourner le choix d’une catégorie.</p>
+      <ul><li>« Images générées par IA, scénario et montage humains. »</li><li>« Texte humain, voix générée par IA. »</li><li>« Illustration générée par IA, texte humain. »</li><li>« Réalisation : montage et narration conçus par une personne; visuels générés par IA. »</li></ul>
+      <p>Ces exemples de mentions sont à adapter à la démarche réellement suivie. Le déclarant demeure responsable de leur exactitude et des obligations applicables.</p>
+
+      <h3>7. Usage honnête et absence de certification</h3>
+      <ul>
+        <li>Une pastille représente une auto-déclaration volontaire de l’auteur ou du diffuseur; elle ne garantit ni examen indépendant, ni qualité, ni droit d’auteur, ni conformité juridique.</li>
+        <li>Ne jamais présenter un signe graphique comme une preuve d’audit, de certification ou d’approbation par un organisme extérieur.</li>
+        <li>Si la création change substantiellement, réexaminer sa catégorie et corriger l’affichage et la mention complémentaire au besoin.</li>
+        <li>Respecter les exigences légales ou celles des plateformes qui pourraient s’ajouter à cette démarche volontaire.</li>
+        <li>Conserver, lorsque cela est possible, une note interne expliquant les outils et les contributions humaines et automatisées décisives.</li>
+      </ul>
+
+      <h3>8. Contrôle qualité avant publication</h3>
+      <ul>
+        <li>La pastille choisie décrit-elle fidèlement qui a façonné le résultat final, selon le test des deux questions?</li>
+        <li>La catégorie apparaît-elle en toutes lettres, lisiblement et au bon endroit pour chaque création?</li>
+        <li>La miniature, le cas échéant, est-elle associée à une légende ou une identification accessible?</li>
+        <li>Une mention complémentaire est-elle nécessaire pour expliquer une composante importante créée par IA?</li>
+        <li>La pastille respecte-t-elle ses couleurs, sa forme, ses libellés et l’absence de signes de certification?</li>
+        <li>Les exigences de la plateforme et de la loi applicable ont-elles été vérifiées?</li>
+      </ul>
+
+      <h3>9. Sources graphiques et mise à jour</h3>
+      <p>Les illustrations de cette version documentent l’apparence approuvée à la date du 16 novembre 2026. Les codes hexadécimaux, profils colorimétriques, zones de protection, fichiers maîtres vectoriels, déclinaisons transparentes et formats d’export devront être fixés dans un dossier technique distinct avant une diffusion massive. Aucune teinte exacte ne doit être inférée des captures ou du PDF compressé.</p>
+      <p>Le référentiel reste volontaire et évolutif. Une modification purement graphique n’affecte pas rétroactivement la catégorie d’une création. Les évolutions ultérieures du système sont datées et documentées.</p>
+    </section>
+
+    <section id="versions">
+      <h2>Versions du référentiel</h2>
+      <p>Ce référentiel évoluera avec les outils et les usages. Chaque nouvelle version porte un numéro et une date. Une création garde la pastille choisie selon la version en vigueur au moment de sa publication.</p>
+      <div class="table cols2b">
+        <div class="row th"><span>Version</span><span>Changements</span></div>
+        <div class="row"><span><strong>1.0</strong> · 2026</span><span>Première version.</span></div>
+        <div class="row"><span><strong>1.1</strong> · 3 novembre 2026</span><span>Règle « diriger / façonner »; contribution substantielle; test à deux questions; règle du doute; cas courants; créations mixtes; auto-déclaration et loi.</span></div>
+        <div class="row"><span><strong>1.2</strong> · 3 novembre 2026</span><span>Direction structurante reconnue; contribution substantielle renforcée; test et règle du doute reformulés; mention complémentaire ciblée; section juridique précisée.</span></div>
+        <div class="row"><span><strong>1.3</strong> · 16 novembre 2026</span><span>Charte d’utilisation des pastilles : modèle rond commun, accents vert/bleu/mauve, formats complet et miniature, recommandations de taille, placement, lisibilité, mentions et contrôle qualité. Critères de classification inchangés.</span></div>
+      </div>
+      <h3>Portée de la version 1.3</h3>
+      <p>La nouveauté de cette édition porte sur la présentation des pastilles : couleurs, intégrité graphique, lisibilité, formats et règles d’affichage. Les critères qui servent à classer les créations sont conservés sans changement de fond.</p>
+      <p class="endnote">Une pastille n’est pas un jugement sur l’œuvre : c’est une déclaration fidèle et compréhensible de sa méthode de création.</p>
+      <div class="doc-dl"><div><strong>Référentiel 1.3 en PDF</strong><p>13 pages · à imprimer ou à partager</p></div><a class="btn btn-gold" href="../assets/docs/referentiel-mode-de-creation-v1-3.pdf" download>Télécharger le PDF</a></div>
+    </section>
+
+  </article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div style="max-width:340px">
+        <a href="../" class="foot-logo"><img src="../assets/logo/logo-modedecreation-1053.png" alt="ModeDeCreation.org — La transparence créative"></a>
+        <p>Un cadre volontaire de transparence pour déclarer la place de l’IA dans les créations. Aucune certification externe.</p>
+      </div>
+      <div class="cols">
+        <div><h5>Référentiel</h5><ul><li><a href="../#pastilles">Les pastilles</a></li><li><a href="../#test">Le test</a></li><li><a href="../#charte">Charte</a></li><li><a href="./">Référentiel complet</a></li></ul></div>
+        <div><h5>Ressources</h5><ul><li><a href="../#telechargements">Téléchargements</a></li><li><a href="../assets/docs/referentiel-mode-de-creation-v1-3.pdf">Référentiel PDF</a></li><li><a href="../#faq">FAQ</a></li></ul></div>
+        
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 ModeDeCreation.org</span><span>Référentiel 1.3 · 16 novembre 2026</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var mb=document.getElementById('menuBtn'),nl=document.getElementById('navLinks');
+  mb.addEventListener('click',function(){var o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+  var links=[].slice.call(document.querySelectorAll('#toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){var y=window.scrollY+130,cur=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle('on',i===cur)})}
+  spy();window.addEventListener('scroll',spy,{passive:true});
+})();
+</script>
+</body>
+</html>
