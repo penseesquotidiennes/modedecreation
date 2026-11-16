@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Framework 1.3 — ModeDeCreation.org</title>
+<meta name="description" content="The full Creation Mode disclosure framework: human, AI-assisted or AI-generated production. Version 1.3, November 16, 2026.">
+<link rel="alternate" hreflang="fr" href="https://modedecreation.org/referentiel/">
+<link rel="alternate" hreflang="en" href="https://modedecreation.org/en/reference/">
+<link rel="icon" href="../../assets/logo/favicon-64.png">
+<link rel="apple-touch-icon" href="../../assets/logo/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.nav{background:rgba(11,27,63,.92);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px)}
+.doc-hero{background:var(--navy);color:#fff;padding:150px 0 70px;position:relative;overflow:hidden}
+.doc-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 300px at 85% 30%,rgba(31,111,235,.30),transparent 70%),radial-gradient(400px 260px at 100% 90%,rgba(139,47,201,.28),transparent 70%),radial-gradient(400px 260px at 70% 100%,rgba(30,158,74,.22),transparent 70%)}
+.doc-hero .wrap{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.doc-hero h1{font-size:clamp(36px,5vw,62px);font-weight:800;margin:18px 0 16px;max-width:780px}
+.doc-hero p{color:rgba(255,255,255,.75);font-size:18px;max-width:620px}
+.doc-hero .eyebrow{color:var(--gold)}
+.doc-hero .acts{display:flex;gap:12px;flex-wrap:wrap}
+.doc-hero .badges{display:flex;gap:10px;margin-top:26px}
+.doc-hero .badges img{width:74px;filter:drop-shadow(0 8px 16px rgba(0,0,0,.35))}
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:64px;padding-top:72px;padding-bottom:110px}
+.toc{position:sticky;top:100px;align-self:start;max-height:calc(100vh - 120px);overflow:auto}
+.toc h5{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:14px}
+.toc ol{list-style:none;display:grid;gap:2px;border-left:1px solid var(--line)}
+.toc a{display:block;padding:6px 0 6px 16px;margin-left:-1px;border-left:2px solid transparent;font-size:14.5px;color:var(--ink-3);text-decoration:none;line-height:1.35}
+.toc a:hover{color:var(--ink)}
+.toc a.on{color:var(--ink);border-color:var(--navy);font-weight:600}
+.doc{max-width:740px}
+.doc section{scroll-margin-top:96px;padding-bottom:28px;margin-bottom:36px;border-bottom:1px solid var(--line)}
+.doc section:last-child{border-bottom:0}
+.doc h2{font-size:clamp(28px,3.2vw,38px);font-weight:700;margin-bottom:18px}
+.doc h3{font-size:21px;margin:30px 0 10px}
+.doc p{color:var(--ink-2);margin-bottom:14px}
+.doc ul{margin:0 0 16px;padding-left:22px;color:var(--ink-2)}
+.doc li{margin-bottom:7px}
+.doc strong{color:var(--ink)}
+.callout{background:var(--cream);border:1px solid #EFE5CC;border-left:4px solid var(--gold);border-radius:14px;padding:20px 24px;margin:20px 0;font-size:17.5px;color:var(--ink);font-weight:500}
+.callout.dark{background:var(--navy);color:#fff;border:0;border-left:4px solid var(--gold)}
+.simple{display:inline-block;font-family:"Inter Tight";font-weight:700;font-size:20px;padding:8px 16px;border-radius:12px;background:var(--soft);color:var(--acc);margin:4px 0 10px}
+.mode-head{display:flex;align-items:center;gap:22px;margin-bottom:18px}
+.mode-head img{width:120px;flex:none}
+.mode-head h2{margin:0}
+.mode-head .num{font-family:"JetBrains Mono";font-size:12.5px;letter-spacing:.12em;color:var(--acc);text-transform:uppercase}
+.table{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:18px 0 22px;background:#fff}
+.table .row{display:grid;grid-template-columns:1fr 230px;gap:20px;padding:14px 20px;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink-2);align-items:center}
+.table .row:first-child{border-top:0}
+.table .row.th{background:#F6F5F0;font-family:"JetBrains Mono";font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.table.cols3 .row{grid-template-columns:1fr 1fr 1.4fr}
+.table.cols2b .row{grid-template-columns:200px 1fr}
+.v{font-weight:600;font-size:14.5px}
+.v.h{color:var(--green)}.v.a{color:var(--blue)}.v.g{color:var(--purple)}
+.qbox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:16px 0;box-shadow:var(--shadow)}
+.qbox .qn{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.qbox p.q{font-family:"Inter Tight";font-weight:600;font-size:19px;color:var(--ink);margin:6px 0 12px;line-height:1.35}
+.qbox ul{list-style:none;padding:0;margin:0}
+.qbox li{display:flex;gap:10px;align-items:center}
+.arrow{color:var(--ink-3)}
+.fig{display:flex;justify-content:center;gap:4%;background:linear-gradient(135deg,var(--navy),#20306A);border-radius:18px;padding:28px;margin:18px 0 8px}
+.fig img{width:28%}
+.figcap{font-size:13.5px;color:var(--ink-3);margin-bottom:18px}
+.minis{display:flex;gap:28px;justify-content:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin:18px 0 8px}
+.minis div{text-align:center;font-family:"JetBrains Mono";font-size:11.5px;letter-spacing:.08em;color:var(--ink-3)}
+.minis img{width:72px;margin:0 auto 8px}
+.endnote{font-family:"Inter Tight";font-size:22px;font-weight:600;color:var(--ink);text-align:center;padding:30px 10px 0;line-height:1.4}
+.doc-dl{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--navy);color:#fff;border-radius:20px;padding:26px 30px;margin-top:20px}
+.doc-dl p{color:rgba(255,255,255,.75);margin:0}
+.doc-dl strong{color:#fff;display:block;font-family:"Inter Tight";font-size:20px}
+@media (max-width:1000px){.layout{grid-template-columns:1fr;gap:0}.toc{display:none}}
+@media (max-width:700px){
+ .doc-hero{padding:118px 0 52px}
+ .layout{padding-top:48px;padding-bottom:80px}
+ .table .row,.table.cols3 .row,.table.cols2b .row{grid-template-columns:1fr;gap:6px}
+ .table .row.th{display:none}
+ .mode-head{gap:16px}.mode-head img{width:84px}
+ .minis{gap:14px}.minis img{width:56px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav scrolled" id="nav">
+  <div class="wrap">
+    <a href="../" class="brand" aria-label="ModeDeCreation.org, home"><img src="../../assets/logo/marque-160.png" alt="" class="brand-mark"><span class="brand-txt">ModeDeCreation<span class="tld">.org</span></span></a>
+    <div class="nav-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="../#pastilles">The badges</a>
+        <a href="../#test">Find my badge</a>
+        <a href="../#charte">Guidelines</a>
+        <a href="./" style="color:#fff">Framework</a>
+        <a href="../#telechargements" class="btn btn-gold">Download</a>
+      </nav>
+      <div class="lang-sw" role="group" aria-label="Language"><a href="../../referentiel/" hreflang="fr" lang="fr">FR</a><a aria-current="true">EN</a></div>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="doc-hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Version 1.3 · November 16, 2026</span>
+      <h1>Creation Mode Disclosure Framework</h1>
+      <p>A voluntary transparency framework. No external certification.</p>
+      <div class="badges">
+        <img src="../../assets/pastilles/en/human-production.png" alt="Human production">
+        <img src="../../assets/pastilles/en/ai-assisted-production.png" alt="AI-assisted production">
+        <img src="../../assets/pastilles/en/ai-generated-production.png" alt="AI-generated production">
+      </div>
+    </div>
+    <div class="acts">
+      <a class="btn btn-gold" href="../../assets/docs/creation-mode-framework-v1-3.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Download the PDF</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+  <aside class="toc">
+    <h5>Contents</h5>
+    <ol id="toc">
+      <li><a href="#pourquoi">Why this framework?</a></li>
+      <li><a href="#application">What does a badge apply to?</a></li>
+      <li><a href="#qui">Who chooses the badge?</a></li>
+      <li><a href="#principe">A fundamental principle</a></li>
+      <li><a href="#humaine">1. Human production</a></li>
+      <li><a href="#assistee">2. AI-assisted production</a></li>
+      <li><a href="#generee">3. AI-generated production</a></li>
+      <li><a href="#commandes">The number of prompts</a></li>
+      <li><a href="#pourcentage">No arbitrary percentages</a></li>
+      <li><a href="#technique">Technical AI</a></li>
+      <li><a href="#cas">Common cases</a></li>
+      <li><a href="#mixtes">Mixed creations</a></li>
+      <li><a href="#test">The two-question test</a></li>
+      <li><a href="#doute">When in doubt</a></li>
+      <li><a href="#signification">What the badges don’t mean</a></li>
+      <li><a href="#loi">The badges and the law</a></li>
+      <li><a href="#retenir">The rule to remember</a></li>
+      <li><a href="#charte">Usage guidelines</a></li>
+      <li><a href="#versions">Framework versions</a></li>
+    </ol>
+  </aside>
+
+  <article class="doc">
+
+    <section id="pourquoi">
+      <h2>Why this framework?</h2>
+      <p>Artificial intelligence tools are now part of many creative processes. Their presence, however, does not mean that all creations were produced in the same way.</p>
+      <p>This framework sets out three creation modes, each represented by a badge:</p>
+      <ul><li><strong>HUMAN PRODUCTION</strong></li><li><strong>AI-ASSISTED PRODUCTION</strong></li><li><strong>AI-GENERATED PRODUCTION</strong></li></ul>
+      <p>Its purpose is not to measure the value, quality or merit of a creation. It simply aims to answer, as clearly as possible, this question:</p>
+      <div class="callout dark">What role did humans and artificial intelligence really play in creating the final result?</div>
+      <h3>The words we use</h3>
+      <p>In this text, the word <strong>creation</strong> refers to the work or content presented to the public: a text, an image, a video, a piece of music, a post.</p>
+      <p>The word <strong>production</strong>, printed on the badges, refers to the way that creation was produced. So a human creation carries the HUMAN PRODUCTION badge, and so on.</p>
+    </section>
+
+    <section id="application">
+      <h2>What does a badge apply to?</h2>
+      <p>A badge describes <strong>one specific creation</strong>, as the public sees, reads or hears it: an article, an image, a video, a post, an episode.</p>
+      <ul>
+        <li>When a website, book or channel brings together creations made in different ways, each creation carries its own badge.</li>
+        <li>A general badge placed across an entire website does not replace the badge for each creation.</li>
+        <li>When a creation is significantly modified after publication, its badge must be reviewed.</li>
+      </ul>
+    </section>
+
+    <section id="qui">
+      <h2>Who chooses the badge?</h2>
+      <p>The badge is a <strong>self-declaration</strong>. It is chosen by the person or organization that publishes the creation, because they are the ones who know how it was produced.</p>
+      <p>The badge is not a certification granted by an outside body. It is a good-faith commitment to the public.</p>
+      <p>If a badge proves inaccurate, the person who chose it commits to correcting it promptly, and visibly when the error was significant.</p>
+    </section>
+
+    <section id="principe">
+      <h2>A fundamental principle</h2>
+      <p>The right badge does not simply depend on whether artificial intelligence was present or absent.</p>
+      <div class="callout">It depends above all on who shaped the final content.</div>
+      <p>Using a tool that includes some AI functions does not automatically turn a human creation into an AI-assisted one.</p>
+      <p>Conversely, spending a lot of time writing prompts for an AI does not necessarily mean the work has become a human creation.</p>
+      <p>What matters is the real nature of each contribution.</p>
+      <h3>Directing isn’t always shaping</h3>
+      <p>This distinction settles many cases, but it must be applied with nuance.</p>
+      <p>Giving AI a topic, writing general instructions, asking for several versions, rejecting some and selecting one is a form of direction. These actions can be important, but on their own they do not demonstrate a substantial creative contribution.</p>
+      <p>Direction itself becomes creatively substantial when it determines, precisely and continuously, the meaning, structure, arrangement, narrative or final form of the creation. On the other hand, multiplying prompts or choosing among results without exerting this structuring influence remains mainly an activity of requesting and selecting.</p>
+      <div class="callout">To distinguish AI-assisted production from AI-generated production, we therefore assess the human contribution as a whole: what the person creates or modifies themselves, and also, when it is decisive, the structuring direction they exert over the final result.</div>
+    </section>
+
+    <section id="humaine" class="h">
+      <div class="mode-head"><img src="../../assets/pastilles/en/human-production.png" alt="Human production badge"><div><span class="num">Mode 1</span><h2>Human production</h2></div></div>
+      <h3>Definition</h3>
+      <p>A creation is human when its creative or intellectual content is conceived and made by one or more people.</p>
+      <p>Digital or automated tools may be used, provided they do not themselves generate any part of the final creative content.</p>
+      <h3>In simple terms</h3>
+      <span class="simple">The human creates.</span>
+      <h3>Examples</h3>
+      <p>A person:</p>
+      <ul><li>writes an article themselves;</li><li>draws an illustration on a graphics tablet;</li><li>edits a video from footage they created or filmed;</li><li>adjusts the brightness or colours of a photograph;</li><li>uses a spelling and grammar checker;</li><li>automatically stabilizes a video;</li><li>removes background noise;</li><li>crops or resizes an image.</li></ul>
+      <p>These operations may rely on very advanced technologies, sometimes even artificial intelligence, without the tool becoming the creator of the content.</p>
+    </section>
+
+    <section id="assistee" class="a">
+      <div class="mode-head"><img src="../../assets/pastilles/en/ai-assisted-production.png" alt="AI-assisted production badge"><div><span class="num">Mode 2</span><h2>AI-assisted production</h2></div></div>
+      <h3>Definition</h3>
+      <p>A creation is AI-assisted when both the human and artificial intelligence make a real contribution to the final content, and the human makes a substantial creative contribution.</p>
+      <p>This contribution may take the form of directly creating or modifying the content, rewriting, assembling, creative editing, or structuring direction that truly determines the meaning, structure, arrangement, narrative or final form.</p>
+      <h3>In simple terms</h3>
+      <span class="simple">The human creates with AI.</span>
+      <h3>What “substantial creative contribution” means</h3>
+      <p>A creative contribution is substantial when it decisively influences the meaning, structure, arrangement, expression or form of the final result. It must be perceptible in the final creation, even if it can’t be measured in words, pixels or minutes. A final result that differs greatly from the raw AI output can be a clue, but on its own it is not a sufficient criterion.</p>
+      <p>Some borderline examples:</p>
+      <div class="table">
+        <div class="row th"><span>Situation</span><span>Substantial contribution?</span></div>
+        <div class="row"><span>AI writes a 20-sentence text; the person changes two words and the title.</span><span class="v g">No: AI-generated</span></div>
+        <div class="row"><span>AI writes a first draft; the person rewrites half the sentences, reorganizes the text and adds their own ideas.</span><span class="v a">Yes: AI-assisted</span></div>
+        <div class="row"><span>AI produces an image; the person only adjusts the brightness and crops it.</span><span class="v g">No: AI-generated</span></div>
+        <div class="row"><span>The person combines several generated images, draws some elements themselves and composes the whole.</span><span class="v a">Yes: AI-assisted</span></div>
+        <div class="row"><span>The person writes their text; AI suggests a smoother version, which the person accepts almost entirely.</span><span class="v a">Yes: AI-assisted (AI rewrote it)</span></div>
+        <div class="row"><span>AI generates the shots of a video; the person sets the script, scene order, pacing, narration and final edit through precise and continuous direction.</span><span class="v a">Yes: AI-assisted (structuring direction)</span></div>
+      </div>
+      <h3>What the human does</h3>
+      <p>The actions that count are those through which the human personally works on the final content. They may, for example:</p>
+      <ul><li>write part of the content;</li><li>rewrite passages;</li><li>correct and rework the content in depth;</li><li>change the composition themselves;</li><li>gather and assemble several elements;</li><li>add elements they created themselves (text, drawing, photo, music, voice);</li><li>transform the result over many steps;</li><li>exercise structuring direction that determines the narrative, arrangement or final form.</li></ul>
+      <h3>What is generally not enough on its own</h3>
+      <p>Taken in isolation, the following actions are generally not enough to move a creation from “generated” to “assisted”:</p>
+      <ul><li>coming up with a general idea without further work on the result;</li><li>setting a goal or general constraints;</li><li>giving general instructions or non-structuring direction;</li><li>asking for several proposals or variations;</li><li>rejecting or selecting proposals without any other substantial contribution.</li></ul>
+      <p>Fact-checking is valuable editorial work and strongly recommended, but on its own it does not change who created the content. However, when artistic or editorial direction is precise, continuous and decisive to the point of shaping the structure, narrative, arrangement or final form, it can amount to a substantial creative contribution.</p>
+      <h3>Example</h3>
+      <p>A person designs a visual identity. They determine the concept, the message, the categories to represent, the hierarchy, the colours and the layout constraints. An AI produces different proposals. The person compares them, rejects some versions and then directs, precisely and continuously, changes to composition, typography, proportions and graphic elements until the final result. They may also finish some adjustments in graphic design software.</p>
+      <p>The final product is no longer simply an AI generation: its structure and form were determined by a joint creative process, under substantial human direction.</p>
+      <div class="callout">Note: if the person had limited themselves to general requests, multiplying prompts and choosing a result without exerting a structuring influence on the final form, the creation would rather be AI-generated.</div>
+    </section>
+
+    <section id="generee" class="g">
+      <div class="mode-head"><img src="../../assets/pastilles/en/ai-generated-production.png" alt="AI-generated production badge"><div><span class="num">Mode 3</span><h2>AI-generated production</h2></div></div>
+      <h3>Definition</h3>
+      <p>A creation is AI-generated when artificial intelligence produces most of the final creative content from a human request.</p>
+      <p>The human may have chosen the topic, written instructions, asked for several versions or selected the result they prefer. They may also have made minor touch-ups.</p>
+      <p>However, the creative substance of the final product comes mainly from the AI generation.</p>
+      <h3>In simple terms</h3>
+      <span class="simple">The human asks, AI creates.</span>
+      <h3>Example</h3>
+      <p>A person writes:</p>
+      <div class="callout">“Create a realistic image of a cabin by a lake at sunrise.”</div>
+      <p>Artificial intelligence produces the image. The person picks the one they prefer and uses it practically as is.</p>
+      <p>Even if the human prompt was detailed and thoughtful, the image itself was produced mainly by artificial intelligence.</p>
+    </section>
+
+    <section id="commandes">
+      <h2>The number of prompts doesn’t determine the category</h2>
+      <p>Classifying a creation by the number of prompts sent to artificial intelligence would be unreliable.</p>
+      <p>One person may write a single prompt and then deeply transform the result themselves. Another may write a hundred extremely precise prompts without ever modifying the generated content themselves.</p>
+      <p>In the first case, the creation is AI-assisted. In the second, it remains AI-generated.</p>
+      <p>So the question is not: “How much work did the human put into their prompts?”</p>
+      <div class="callout dark">The question is: “Who shaped the content that the public ultimately sees, reads or hears?”</div>
+    </section>
+
+    <section id="pourcentage">
+      <h2>No arbitrary percentages</h2>
+      <p>This framework deliberately avoids rules such as “30% human,” “50% AI” or “70% human.”</p>
+      <p>Such percentages would be hard to measure objectively and would give a false sense of precision.</p>
+      <p>Instead, a creation is classified according to the nature of the human and AI contributions.</p>
+    </section>
+
+    <section id="technique">
+      <h2>Technical AI isn’t creative AI</h2>
+      <p>This distinction is essential.</p>
+      <p>A technology may use artificial intelligence to perform a technical task without really taking part in creating the content. For example:</p>
+      <ul><li>removing unwanted noise;</li><li>correcting exposure;</li><li>stabilizing an image;</li><li>automatically cutting out a subject;</li><li>correcting spelling, grammar or punctuation;</li><li>converting a file format;</li><li>slightly improving sharpness.</li></ul>
+      <p>These functions do not, on their own, require a creation to be declared AI-assisted.</p>
+      <p>However, when an AI invents, writes, rephrases, draws, composes, interprets, substantially transforms or generates content that ends up in the final product, its contribution becomes creative.</p>
+    </section>
+
+    <section id="cas">
+      <h2>Common cases</h2>
+      <p><strong>Writing tools that rephrase.</strong> Correcting spelling, grammar or punctuation, or suggesting one word at a time, remains technical: HUMAN PRODUCTION. As soon as the tool rewrites whole sentences or paragraphs and those rewrites are kept, its contribution becomes creative: AI-ASSISTED PRODUCTION.</p>
+      <p><strong>AI translation of a human text.</strong> Translating means choosing words, a tone, a rhythm: it is interpretive work. A human text translated by AI therefore carries the AI-ASSISTED PRODUCTION badge, with the note “AI translation.” If a person then revises the translation in depth, the badge stays the same, but the note can become “AI translation, revised by a human.”</p>
+      <p><strong>A synthetic voice reading a human text.</strong> Voice, intonation and rhythm are an interpretation, and that interpretation is done by AI. The creation carries the AI-ASSISTED PRODUCTION badge, with the note “AI-generated voice, human text.”</p>
+      <p><strong>Automatic captions and transcripts.</strong> When they faithfully reproduce human speech, they remain technical and don’t change the badge.</p>
+    </section>
+
+    <section id="mixtes">
+      <h2>Mixed creations</h2>
+      <p>Some productions are more complex. A video may, for example, include:</p>
+      <ul><li>a script written by a human;</li><li>AI-generated images;</li><li>a synthetic voice;</li><li>human editing;</li><li>music composed by a human.</li></ul>
+      <p>In that case, the badge is chosen by considering the creation as a whole:</p>
+      <ul><li>if no component was created by AI: <strong>HUMAN PRODUCTION</strong>;</li><li>if some components were created by AI, but the human personally made a substantial creative contribution to the final product: <strong>AI-ASSISTED PRODUCTION</strong>;</li><li>if almost all components were created by AI and the human mostly just requested and roughly assembled them: <strong>AI-GENERATED PRODUCTION</strong>.</li></ul>
+      <h3>When a complementary note is required</h3>
+      <p>When a mixed creation contains an AI-created component that plays a substantial creative role, or knowledge of which could change the public’s understanding of how the work was produced, the badge must be accompanied by a short note explaining who did what. For example:</p>
+      <ul><li>“AI-generated images, human script and editing.”</li><li>“Human text, AI-generated voice.”</li><li>“AI-generated illustration, human text.”</li></ul>
+      <p>The badge gives the general information. The complementary note provides the necessary transparency when AI’s involvement is creatively important. A minor, purely technical component, or one with no substantial creative impact, does not on its own require a complementary note.</p>
+    </section>
+
+    <section id="test">
+      <h2>The two-question test</h2>
+      <p>To choose a badge, two questions are enough in the vast majority of situations.</p>
+      <div class="qbox"><span class="qn">Question 1</span><p class="q">Did artificial intelligence generate, write or creatively transform any part of the final content?</p>
+        <ul><li><span class="arrow">No →</span><span class="v h">HUMAN PRODUCTION</span></li><li><span class="arrow">Yes →</span><span>Go to question 2.</span></li></ul></div>
+      <div class="qbox"><span class="qn">Question 2</span><p class="q">Did the human make a substantial creative contribution to the final result?</p>
+        <p style="font-size:15px">For example: creating, writing, rewriting, transforming, assembling, creative editing, or structuring direction that truly determines the meaning, structure, arrangement, narrative or final form.</p>
+        <ul><li><span class="arrow">Yes →</span><span class="v a">AI-ASSISTED PRODUCTION</span></li><li><span class="arrow">No, or very little →</span><span class="v g">AI-GENERATED PRODUCTION</span></li></ul></div>
+      <p>Reminder: simply choosing, rejecting or multiplying instructions is not enough. However, precise, continuous and decisive direction can be a substantial contribution when it truly shapes the final result.</p>
+      <h3>The check test</h3>
+      <p>If the answer to question 2 seems uncertain, ask this question:</p>
+      <div class="callout dark">If you removed from the final product everything that artificial intelligence actually created, would a substantial human creation still remain?</div>
+      <ul><li>If yes, the AI-ASSISTED PRODUCTION badge is appropriate.</li><li>If almost all the creative content would disappear, the AI-GENERATED PRODUCTION badge is the right one.</li></ul>
+      <p><a href="../#test" style="font-weight:600;color:var(--blue)">Take the interactive test →</a></p>
+    </section>
+
+    <section id="doute">
+      <h2>When in doubt</h2>
+      <div class="callout">In case of reasonable doubt between two badges, choose the one that informs the public most clearly about AI’s real involvement.</div>
+      <ul><li>If doubt remains between HUMAN and AI-ASSISTED → choose AI-ASSISTED.</li><li>If doubt remains between AI-ASSISTED and AI-GENERATED → choose AI-GENERATED.</li></ul>
+      <p>The goal is not to find the most flattering category. The goal is to be able to answer this question simply and honestly:</p>
+      <div class="callout dark">“If the person viewing this creation knew how it was produced, would they find the chosen badge fair and true to reality?”</div>
+      <p>This transparency is what gives the system its value.</p>
+    </section>
+
+    <section id="signification">
+      <h2>What the badges don’t mean</h2>
+      <ul><li>HUMAN doesn’t mean “better.”</li><li>AI-ASSISTED doesn’t mean “less authentic.”</li><li>AI-GENERATED doesn’t mean “without human involvement.”</li></ul>
+      <p>The badges are neither a ranking nor an award. They simply indicate the creation mode.</p>
+    </section>
+
+    <section id="loi">
+      <h2>The badges and the law</h2>
+      <p>This framework is a voluntary transparency initiative. It does not replace legal obligations.</p>
+      <p>Some laws may impose specific disclosure, labelling or information requirements for certain content created or modified with AI. These requirements vary by jurisdiction, type of content and context of use, and they can change quickly.</p>
+      <p>Users of the framework remain responsible for checking the rules that apply in their jurisdiction. When a law requires a specific notice, that notice is added to the badge and must be presented in the form the law requires.</p>
+    </section>
+
+    <section id="retenir">
+      <h2>The rule to remember</h2>
+      <div class="table cols2b">
+        <div class="row th"><span>Badge</span><span>In simple terms</span></div>
+        <div class="row"><span class="v h">HUMAN PRODUCTION</span><span>The human creates.</span></div>
+        <div class="row"><span class="v a">AI-ASSISTED PRODUCTION</span><span>The human creates with AI.</span></div>
+        <div class="row"><span class="v g">AI-GENERATED PRODUCTION</span><span>The human asks, AI creates.</span></div>
+      </div>
+      <p>And when in doubt: the badge that informs the public most clearly about AI’s real involvement.</p>
+    </section>
+
+    <section id="charte">
+      <h2>Badge usage guidelines</h2>
+      <p><em>New in version 1.3.</em> These guidelines complement the framework without changing the definition of the three creation modes, the two-question test or the rule for when in doubt. They govern the visual presentation of a voluntary declaration; they create no certification and no value judgment.</p>
+
+      <h3>1. The three badges and their colour code</h3>
+      <p>All three designs share the same structure: round shape, gold rim, navy upper band bearing the name of the system, cream background, central pictogram and a readable label. Only the accent colour changes with the category.</p>
+      <div class="fig"><img src="../../assets/pastilles/en/human-production.png" alt="Human production"><img src="../../assets/pastilles/en/ai-assisted-production.png" alt="AI-assisted production"><img src="../../assets/pastilles/en/ai-generated-production.png" alt="AI-generated production"></div>
+      <p class="figcap">Figure 1 — Reference designs: full badges, with green, blue and purple accents.</p>
+      <div class="table cols3">
+        <div class="row th"><span>Mode</span><span>Accent</span><span>Label to use</span></div>
+        <div class="row"><span>Human</span><span class="v h">GREEN</span><span>Human production</span></div>
+        <div class="row"><span>AI-assisted</span><span class="v a">BLUE</span><span>AI-assisted production</span></div>
+        <div class="row"><span>AI-generated</span><span class="v g">PURPLE</span><span>AI-generated production</span></div>
+      </div>
+      <p>The colours make the badges easier to recognize; they do not rank the creation modes. The written label is always required: colour alone is not a declaration.</p>
+
+      <h3>2. Graphic integrity rules</h3>
+      <ul>
+        <li>Keep the circular shape, the gold rim and the navy blue shared by all three badges.</li>
+        <li>Keep the labels intact: “Human production,” “AI-assisted production” and “AI-generated production.” Never shorten “assisted” or “generated” to the point of creating ambiguity.</li>
+        <li>Don’t swap the colours: green = human; blue = AI-assisted; purple = AI-generated.</li>
+        <li>Don’t add laurels, a publisher’s signature, a curved smile under the text, a medal, an inspection seal, or any wording suggesting official approval.</li>
+        <li>Avoid distortion, rotation, cropping, excessive transparency, overlapping and insufficient contrast.</li>
+        <li>On a busy background, add clear space or a neutral light backing without altering the badge’s shape or text.</li>
+      </ul>
+
+      <h3>3. Two usage formats</h3>
+      <p><strong>Full format.</strong> This is the reference format. It includes the name of the creation mode, its pictogram and the upper band. It should be preferred whenever the text remains truly readable at the display size.</p>
+      <p><strong>Mini format.</strong> It keeps the round shape, the pictogram and the accent colour, but drops the text that would be unreadable. It serves as a secondary visual marker and must not replace the written declaration when understandable information is expected.</p>
+
+      <h3>4. Size test and readability criteria</h3>
+      <div class="table">
+        <div class="row th"><span>On-screen display size</span><span>Recommendation</span></div>
+        <div class="row"><span><strong>≈ 280 px</strong> in diameter</span><span>Full version: excellent readability in testing.</span></div>
+        <div class="row"><span><strong>≈ 160 px</strong></span><span>Full version: generally readable; check on a phone.</span></div>
+        <div class="row"><span><strong>≈ 96 px</strong></span><span>Mini version recommended; add a visible label.</span></div>
+        <div class="row"><span><strong>≈ 64 px and below</strong></span><span>Pictogram only: marker only; a separate written declaration is required.</span></div>
+      </div>
+      <p>These thresholds are design guidelines from a visual test, not universal guarantees: readability also depends on the screen, contrast, compression and context. For print, check a copy at actual size; don’t convert pixels directly to millimetres.</p>
+      <div class="minis"><div><img src="../../assets/pastilles/en/human-mini.png" alt="Human production mini">HUMAN</div><div><img src="../../assets/pastilles/en/ai-assisted-mini.png" alt="AI-assisted production mini">AI-ASSISTED</div><div><img src="../../assets/pastilles/en/ai-generated-mini.png" alt="AI-generated production mini">AI-GENERATED</div></div>
+      <p class="figcap">Figure 2 — Mini versions. The pictogram must always be accompanied by a text label or an accessible caption.</p>
+
+      <h3>5. Placement by medium</h3>
+      <div class="table cols2b">
+        <div class="row th"><span>Medium</span><span>Good practice</span></div>
+        <div class="row"><span><strong>Video and Reels</strong></span><span>Show the full badge at a readable size on an end card or in a stable spot; the caption or description can specify the contributions. A mini badge in a corner does not, on its own, replace this information.</span></div>
+        <div class="row"><span><strong>Article, photo, web page</strong></span><span>Place the full badge near the title, caption or credits of the creation, and provide understandable alt text.</span></div>
+        <div class="row"><span><strong>Book, cover, printed work</strong></span><span>Position the badge without crowding the title or content. When chapters or illustrations have different modes, identify them separately.</span></div>
+        <div class="row"><span><strong>Collection, website, channel</strong></span><span>A general badge is not enough if the creations have different modes: choose a badge for each relevant unit.</span></div>
+        <div class="row"><span><strong>Mini icon</strong></span><span>Provide a text caption right next to it, a label visible when opened, or an equivalent accessible complement.</span></div>
+      </div>
+
+      <h3>6. Complementary note and transparency</h3>
+      <p>The badge summarizes the general mode. A complementary note specifies the roles when AI’s involvement is creatively important or likely to change the public’s understanding. It is not a way to get around choosing a category.</p>
+      <ul><li>“AI-generated images, human script and editing.”</li><li>“Human text, AI-generated voice.”</li><li>“AI-generated illustration, human text.”</li><li>“Production: editing and narration by a person; AI-generated visuals.”</li></ul>
+      <p>These sample notes should be adapted to the process actually followed. The declarant remains responsible for their accuracy and for any applicable obligations.</p>
+
+      <h3>7. Honest use and no certification</h3>
+      <ul>
+        <li>A badge is a voluntary self-declaration by the author or publisher; it guarantees no independent review, quality, copyright or legal compliance.</li>
+        <li>Never present a graphic sign as proof of an audit, certification or approval by an outside body.</li>
+        <li>If the creation changes substantially, review its category and correct the display and complementary note as needed.</li>
+        <li>Respect legal or platform requirements that may apply in addition to this voluntary initiative.</li>
+        <li>Where possible, keep an internal note explaining the tools used and the decisive human and automated contributions.</li>
+      </ul>
+
+      <h3>8. Quality check before publishing</h3>
+      <ul>
+        <li>Does the chosen badge faithfully describe who shaped the final result, according to the two-question test?</li>
+        <li>Is the category spelled out, readable and in the right place for each creation?</li>
+        <li>If a mini badge is used, is it paired with a caption or accessible label?</li>
+        <li>Is a complementary note needed to explain an important AI-created component?</li>
+        <li>Does the badge respect its colours, shape and labels, with no certification-like signs?</li>
+        <li>Have the platform’s requirements and the applicable law been checked?</li>
+      </ul>
+
+      <h3>9. Graphic sources and updates</h3>
+      <p>The illustrations in this version document the approved appearance as of November 16, 2026. Hex codes, colour profiles, clear space, vector master files, transparent variants and export formats will be set in a separate technical file before wide distribution. No exact colour should be inferred from screenshots or the compressed PDF.</p>
+      <p>The framework remains voluntary and evolving. A purely graphic change does not retroactively affect the category of a creation. Later changes to the system are dated and documented.</p>
+    </section>
+
+    <section id="versions">
+      <h2>Framework versions</h2>
+      <p>This framework will evolve with tools and practices. Each new version has a number and a date. A creation keeps the badge chosen under the version in force when it was published.</p>
+      <div class="table cols2b">
+        <div class="row th"><span>Version</span><span>Changes</span></div>
+        <div class="row"><span><strong>1.0</strong> · 2026</span><span>First version.</span></div>
+        <div class="row"><span><strong>1.1</strong> · November 3, 2026</span><span>“Directing / shaping” rule; substantial contribution; two-question test; rule for when in doubt; common cases; mixed creations; self-declaration and the law.</span></div>
+        <div class="row"><span><strong>1.2</strong> · November 3, 2026</span><span>Structuring direction recognized; substantial contribution strengthened; test and doubt rule reworded; targeted complementary note; legal section clarified.</span></div>
+        <div class="row"><span><strong>1.3</strong> · November 16, 2026</span><span>Badge usage guidelines: shared round design, green/blue/purple accents, full and mini formats, size recommendations, placement, readability, notes and quality check. Classification criteria unchanged.</span></div>
+      </div>
+      <h3>Scope of version 1.3</h3>
+      <p>What’s new in this edition concerns how the badges are presented: colours, graphic integrity, readability, formats and display rules. The criteria used to classify creations are kept without substantive change.</p>
+      <p class="endnote">A badge is not a judgment of the work: it is a faithful, understandable declaration of how it was created.</p>
+      <div class="doc-dl"><div><strong>Framework 1.3 as a PDF</strong><p>To print or share</p></div><a class="btn btn-gold" href="../../assets/docs/creation-mode-framework-v1-3.pdf" download>Download the PDF</a></div>
+    </section>
+
+  </article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div style="max-width:340px">
+        <a href="../" class="foot-logo"><img src="../../assets/logo/logo-modedecreation-1053.png" alt="ModeDeCreation.org"></a>
+        <p>A voluntary transparency framework to disclose the role of AI in creations. No external certification.</p>
+      </div>
+      <div class="cols">
+        <div><h5>Framework</h5><ul><li><a href="../#pastilles">The badges</a></li><li><a href="../#test">The test</a></li><li><a href="../#charte">Guidelines</a></li><li><a href="./">Full framework</a></li></ul></div>
+        <div><h5>Resources</h5><ul><li><a href="../#telechargements">Downloads</a></li><li><a href="../../assets/docs/creation-mode-framework-v1-3.pdf">Framework PDF</a></li><li><a href="../#faq">FAQ</a></li><li><a href="../../referentiel/" hreflang="fr" lang="fr">Version française</a></li></ul></div>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 ModeDeCreation.org</span><span>Framework 1.3 · November 16, 2026</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var mb=document.getElementById('menuBtn'),nl=document.getElementById('navLinks');
+  mb.addEventListener('click',function(){var o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+  var links=[].slice.call(document.querySelectorAll('#toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){var y=window.scrollY+130,cur=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle('on',i===cur)})}
+  spy();window.addEventListener('scroll',spy,{passive:true});
+})();
+</script>
+</body>
+</html>
