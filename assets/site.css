@@ -64,7 +64,7 @@ h1,h2,h3,h4{font-family:"Inter Tight",Inter,sans-serif;letter-spacing:-.02em;lin
 .pill b{background:var(--gold);color:var(--navy);border-radius:999px;padding:2px 9px;font-size:12px;font-weight:700}
 .hero h1{font-size:clamp(42px,5.6vw,74px);font-weight:800;margin:26px 0 24px;letter-spacing:-.028em}
 .hero h1 em{font-style:normal;background:linear-gradient(90deg,#7EE2A0,#79A9FF 50%,#D59BFF);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .lead{font-size:clamp(18px,1.6vw,21px);color:rgba(255,255,255,.78);max-width:620px;margin:0 auto}
+.hero .lead{font-size:clamp(18px,1.6vw,21px);color:rgba(255,255,255,.78);max-width:800px;margin:0 auto;text-wrap:balance}
 .hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px;justify-content:center}
 .trust{display:flex;gap:28px;flex-wrap:wrap;justify-content:center;margin-top:36px;font-size:14px;color:rgba(255,255,255,.6)}
 .trust span{display:flex;align-items:center;gap:8px}
