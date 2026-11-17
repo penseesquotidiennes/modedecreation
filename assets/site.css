@@ -256,7 +256,7 @@ footer .bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wra
 .stage-book{background:linear-gradient(160deg,#F3E8FB,#FBF7FD)}
 .book{width:230px;height:330px;border-radius:4px 10px 10px 4px;background:linear-gradient(135deg,#3A1F5C,#5B2E86);box-shadow:-6px 0 0 #2A1645 inset,0 30px 50px rgba(40,15,70,.35);color:#F6EBDD;padding:26px 22px 18px 28px;display:flex;flex-direction:column}
 .b-top{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.75}
-.b-title{font-family:Georgia,"Times New Roman",serif;font-size:30px;line-height:1.1;margin-top:18px}
+.b-title{font-family:Georgia,"Times New Roman",serif;font-size:24px;line-height:1.15;margin-top:18px;text-wrap:balance}
 .b-orn{width:44px;height:2px;background:var(--gold);margin:18px 0}
 .b-foot{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
 .b-foot span{font-size:10.5px;line-height:1.35;opacity:.85}
